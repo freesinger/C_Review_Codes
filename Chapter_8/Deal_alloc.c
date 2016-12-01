@@ -1,6 +1,5 @@
 /* Deals a random hand of cards */
 
-#include "stdafx.h"
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -15,7 +14,7 @@ int main (void)
     int hand_num, rank, suit;
     const char suit_code[] = {'f', 's', 'r', 'b'};
     const char rank_code[] = {'2', '3', '4', '5', '6', '7','8',
-                              '9', '10', 'J', 'Q', 'K', 'A'};
+                              '9', 't', 'J', 'Q', 'K', 'A'};
     
     srand((unsigned) time(NULL)); //initial the rand()
     
