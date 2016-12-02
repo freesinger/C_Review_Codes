@@ -20,7 +20,7 @@ int main (void)
     int i;
 
     printf("Enter a number: ");
-    scanf("%d\n", &i);
+    scanf("%d", &i);             //"%d\n" always raise problem
     if (is_prime(i))
         printf("Prime.\n");
     else
