@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_NUMBER 10
+#define MAX_NUMBER 100
 
 void initialize_number_generator(void);
 void read_guesses(int secret_number);
