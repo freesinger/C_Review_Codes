@@ -1,6 +1,5 @@
 /* Print a table of compound interest */
 
-#include "stdafx.h"
 #include <stdio.h>
 
 #define VALUE_SIZE ((int)(sizeof(value) / sizeof(value[0])))
@@ -31,6 +30,6 @@ int main(void)
 		}
 		printf("\n");
 	}
-
+	
 	return 0;
 }
