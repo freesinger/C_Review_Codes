@@ -1,4 +1,5 @@
-#include "stdafx.h"
+/* Use 2 dimension array to store data */
+
 #include <stdbool.h> 
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,6 +23,7 @@ int main(void)
 		analyze_hand();
 		print_result();
 	}
+	return 0;
 }
 
 void read_cards(void)
