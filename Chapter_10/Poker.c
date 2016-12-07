@@ -110,9 +110,14 @@ void analyze_hand(void)
 
 	rank = 0;
 	while (num_in_rank[rank] == 0) rank++;                      //check straight
-	for (; rank < NUM_RANKS && num_in_rank[rank] == 1; rank++)
+	for (; rank < NUM_RANKS && num_in_rank[rank] > 0; rank++)   //num_in_rank[rank] == 1
 		num_counter++;
 	if (num_counter == NUM_CARDS)
+		straight = true;
+
+	/* check for ace-straight */
+	if (num_counter == NUM_CARDS - 1 && num_in_rank[0] == 1 && //num_in_rank[0] > 0 && num_in_rank[NUM_RANKS-1] > 0
+		num_in_rank[12] == 1)
 		straight = true;
 	
 	for (rank = 0; rank < NUM_RANKS; rank++) {                  //check pairs
@@ -127,8 +132,7 @@ void print_result(void)
 	if (flush && straight) printf("Straight flush.");
 	else if (four)         printf("Four of a kind.");
 	else if (three &&
-		pairs == 1)   printf("Full house.");			//Is that if right?
-	else if (flush)        printf("Flush.");
+		pairs == 1)   	   printf("Full house.");			
 	else if (straight)     printf("Straight.");
 	else if (three)        printf("Three of a kind.");
 	else if (pairs == 2)   printf("Two pairs.");
