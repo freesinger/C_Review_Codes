@@ -15,11 +15,12 @@ int main(void)
     printf("Enter your sentence: ");
     for (i = 0; i < N; i++) {
         ch = getchar();
-        if (ch != '\n')
-            initial[i] = ch;
+        if (ch == '\n')  // error: if (ch != '\n')   proc won't end until u input N chars
+            break;       //     initial[i] = ch;
+        initial[i] = ch;
     }
 
-    censor(initial);
+   censor(initial);
 
     printf("Result: ");
     for (i = 0; i < N; i++)
