@@ -1,7 +1,6 @@
 /* Exchange 'foo' in str into 'xxx' */
 
 #include <stdio.h>
-#include <string.h>
 
 #define N 30
 
