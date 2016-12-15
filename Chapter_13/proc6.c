@@ -10,7 +10,7 @@ int stri_equal(const char *s, const char *t);
 
 int main(int argc, char *argv[])
 {
-    char *planet[] = {"A", "B", "C", "D", "E"};
+    char *planet[] = {"Aakg", "B", "C", "D", "E"};
     int i, j;
 
     for (i = 1; i < argc; i++) {
@@ -30,7 +30,7 @@ int stri_equal(const char *s, const char *t)
 {
     int i;
 
-    for (i = 0; toupper(s[i]) == toupper(t[i]; i++)
+    for (i = 0; toupper(s[i]) == toupper(t[i]); i++)
         if (s[i] == '\0')
             return 1;
 
