@@ -44,7 +44,7 @@ void clear_line(void)
     num_words = 0;;
 }
 
-void add_line(const char *word)
+void add_word(const char *word)
 {
     if (num_words > 0) {
         line[line_len] = ' ';
