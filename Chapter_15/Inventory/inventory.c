@@ -91,7 +91,7 @@ void search(void)
     if (i >= 0) {
         printf("Part name: %s\n", inventory[i].name);
         printf("Quantity on hand: %d\n", inventory[i].on_hand);
-    } else{
+    } else {
         printf("Part not found.\n");
     }
 }
@@ -125,9 +125,8 @@ void update(void)
             default:  printf("Invalid choice.\n"); 
                       return;      
         }
-    } else {
+    } else
         printf("No part found.\n");
-    }
 }
 
 void print(void)
@@ -135,8 +134,7 @@ void print(void)
     int i; 
 
     printf("Part Number     Part Name         Quantity On Hand \n");
-    for (i = 0; i < num_parts; i++) {
+    for (i = 0; i < num_parts; i++)
         printf("   %d           %-25s%d\n", inventory[i].number,
                 inventory[i].name, inventory[i].on_hand);
-    }
 }
