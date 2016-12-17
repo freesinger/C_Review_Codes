@@ -91,9 +91,8 @@ void search(void)
     if (i >= 0) {
         printf("Part name: %s\n", inventory[i].name);
         printf("Quantity on hand: %d\n", inventory[i].on_hand);
-    } else {
+    } else
         printf("Part not found.\n");
-    }
 }
 
 void update(void)
