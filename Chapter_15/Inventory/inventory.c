@@ -114,7 +114,7 @@ void update(void)
                       read_line(new_name, NAME_LEN);
                       strcpy(inventory[i].name, new_name);
                       break;
-            case 'n': printf("Enter the number: ");
+            case 'n': printf("Enter the new number: ");
                       scanf("%d", &new_number);
                       inventory[i].number = new_number;
                       break;
@@ -134,7 +134,7 @@ void print(void)
 {
     int i; 
 
-    printf("Part Number     Part Name       Quantity On Hand \n");
+    printf("Part Number     Part Name         Quantity On Hand \n");
     for (i = 0; i < num_parts; i++) {
         printf("   %d           %-25s%d\n", inventory[i].number,
                 inventory[i].name, inventory[i].on_hand);
