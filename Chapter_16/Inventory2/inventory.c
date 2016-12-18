@@ -2,10 +2,10 @@
    Moving num_parts and inventory[] into main()
    cause whole procedure becomes very complica-
    ted.                                        */
-#include "stdafx.h"
+
 #include <stdio.h>
 #include <string.h>
-#include "read_line.h"
+#include "readline.h"
 
 #define NAME_LEN  25
 #define MAX_PARTS 100 
@@ -34,7 +34,7 @@ int main(void)
         while (getchar() != '\n')  /* Skip the '\n' */
             ;
         switch(code) {
-            case 'i': insert(inventory, &num_parts);
+            case 'i': insert(inventory, &num_parts); //Only insert（）can change num_parts cause the * pointer
                         break;
             case 's': search(inventory, num_parts);
                         break;
@@ -71,14 +71,14 @@ void insert(struct part inv[], int *np)
     printf("Enter part number: ");
     scanf("%d", &part_number);
 
-    if (find_part(part_number, inv, *np) >= 0) { //mark
-        printf("Part has already existed.\n");
+    if (find_part(part_number, inv, *np) >= 0) { //In function insert() still are inv[] and *np
+        printf("Part has already existed.\n");     //only part_number is actual parameter
         return;
     }
 
     inv[*np].number = part_number;
     printf("Enter part name: ");
-    read_line(inv[*np].name, NAME_LEN);
+    readline(inv[*np].name, NAME_LEN);
     printf("Enter quantity on hand: ");
     scanf("%d", &inv[*np].on_hand);
     (*np)++;
@@ -113,7 +113,7 @@ void update(struct part inv[], int np)
             ;
         switch (choice) {
             case 'a': printf("Enter the new name: ");
-                      read_line(new_name, NAME_LEN);
+                      readline(new_name, NAME_LEN);
                       strcpy(inv[i].name, new_name);
                       break;
             case 'n': printf("Enter the new number: ");
