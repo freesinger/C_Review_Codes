@@ -71,8 +71,8 @@ void insert(struct part inv[], int *np)
     printf("Enter part number: ");
     scanf("%d", &part_number);
 
-    if (find_part(part_number, inv, *np) >= 0) { //In function insert() still are inv[] and *np
-        printf("Part has already existed.\n");     //only part_number is actual parameter
+    if (find_part(part_number, inv, *np) >= 0) { //in func find_part(), all 3 are formal parameters.
+        printf("Part has already existed.\n");     
         return;
     }
 
@@ -81,7 +81,7 @@ void insert(struct part inv[], int *np)
     readline(inv[*np].name, NAME_LEN);
     printf("Enter quantity on hand: ");
     scanf("%d", &inv[*np].on_hand);
-    (*np)++;
+    (*np)++;           //why np must be pointer
 }
 
 void search(const struct part inv[], int np)
