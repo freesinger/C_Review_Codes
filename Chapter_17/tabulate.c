@@ -40,7 +40,7 @@ void tabulate(double (*f)(double), double first,
     double x;
     int num_intervals, i;
 
-    num_intervals = ceil((last - first) / incr);
+    num_intervals = ceil((last - first) / incr);   //ceil(long double x) functions return the smallest integral value greater than or equal to x.
     for (i = 0; i <= num_intervals; i++) {
         x = first + i * incr;
         printf("%10.5f   %10.6f\n", x, (*f)(x));
