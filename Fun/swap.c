@@ -1,4 +1,4 @@
-/* Swap value of 2 integer*/
+/* Swap value */
 
 #include <stdio.h>
 
