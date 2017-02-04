@@ -1,4 +1,5 @@
 /* Calculate sum of random number of integers in array */
+/****** This version will output all possible sum ******/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -8,7 +9,7 @@ int factorial(int base, int chosen);
 int main(void)
 {
     int num, random;
-    int counter = 0, sum = 0;
+    int counter = 0;
 
     printf("Enter number(> 2): ");
     scanf("%d", &num);
@@ -34,30 +35,32 @@ int main(void)
     scanf("%d", &random);
     int temp = factorial(num, random);
     
-    for (int i = 0; i < temp; i++)
-        sum_array[i] = 0;
+    /* for (int i = 0; i < temp; i++)
+       sum_array[i] = 0; */
 
-    //printf("Sum of %d random numbers = ", random);
-    for (int i = 0; i < temp; i++) { 
+    for (int i = 0; i < temp; i++) {
+        sum_array[i] = 0;   //sum_array can be assign here
         while (1) {
             srand((unsigned)time(NULL));
             int value = rand() % num; //value in range 0 ~ n - 1
-
+            
             if (flag[value] == 0) {
                 flag[value] = 1;
                 counter++;
                 sum_array[i] += array[value];
             }
-            if (counter == random) 
+            if (counter == random) { 
+                counter = 0;  //counter must be clear
                 break;
+            }  
         }
     }
+    
     printf("All possible sum: ");
     for (int i = 0; i < temp; i++)
         printf("%d ", sum_array[i]);
     printf("\n");
-    //printf("= %d\n", sum);
-    
+
     return 0;
 }
 
