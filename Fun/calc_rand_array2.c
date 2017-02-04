@@ -4,7 +4,17 @@
 #include <stdlib.h>
 #include <time.h>
 
-int factorial(int base, int chosen);
+int factorial(int base, int chosen)
+{
+    int i = 1;
+
+    while (i < chosen) {
+        base *= (base - 1);
+        i++;
+    }
+
+    return base;
+}
 
 int main(void)
 {
@@ -62,16 +72,4 @@ int main(void)
     printf("\n");
 
     return 0;
-}
-
-int factorial(int base, int chosen)
-{
-    int i = 1;
-
-    while (i < chosen) {
-        base *= (base - 1);
-        i++;
-    }
-
-    return base;
 }
