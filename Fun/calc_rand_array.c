@@ -1,44 +1,52 @@
+/* Calculate sum of random number of integers in array */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX 15
-
 int main(void)
 {
-    int n, sum = 0, i;
+    int num, random;
+    int counter = 0, sum = 0;
 
-    printf("Enter number(>3): ");
-    scanf("%d", &n);
-    int a = n;
+    printf("Enter number(> 2): ");
+    scanf("%d", &num);
     
     //array must declare here
-    int array[n];
-    int flag[MAX] = {0};
+    int array[num];
+    int flag[num];
 
-    printf("Enter %d numbers: ", n);
-    for (i = 0; i < n; i++) {
+    for (int i = 0; i < num; i++)
+        flag[i] = 0;
+
+    printf("Enter %d numbers: ", num);
+    for (int i = 0; i < num; i++)
         scanf("%d", &array[i]);
-    }
     /* do {
         scanf("%d", &array[i]);
         sum += array[i];
         i++;
     } while (getchar() != '\n' && i < n); */
-    int counter = 0;
+
+    printf("Enter random number: ");
+    scanf("%d", &random);
+
+    printf("Sum of %d random numbers = ", random);
     while (1) {
         srand((unsigned)time(NULL));
-        int value = rand() % n; //value in range 0 ~ n - 1
+        int value = rand() % num; //value in range 0 ~ n - 1
 
         if (flag[value] == 0) {
             flag[value] = 1;
             counter++;
+            printf("%d ", array[value]);
+            if (counter < random) 
+                printf("+ ");
             sum += array[value];
         }
-        if (counter > 2) break;
+        if (counter == random) 
+            break;
     }
-    
-    printf("Sum of array: %d\n", sum);
+    printf("= %d\n", sum);
     
     return 0;
 }
