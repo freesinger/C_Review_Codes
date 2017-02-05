@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-#define Queens 8  //定义结果数组的大小，也就是皇后的数目
+#define Queens 8  //定义结果数组的大小，即是皇后的数目
 
 int a[Queens+1];    //八皇后问题的皇后所在的行列位置，从1幵始算起，所以加1
 
