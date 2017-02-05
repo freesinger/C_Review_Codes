@@ -4,7 +4,19 @@
 #include <stdlib.h>
 #include <time.h>
 
-int factorial(int base, int chosen)
+/* int factorial(int num)
+{
+    int i = 1;
+
+    while (num > 1) {
+        i *= num;
+        num--; 
+    }
+
+    return i;
+} */
+
+int choose(int base, int chosen)
 {
     int i = 1;
 
@@ -20,6 +32,8 @@ int main(void)
 {
     int num, random;
     int counter = 0;
+    //int size_temp = factorial(num);
+    int size_temp;
 
     printf("Enter number(> 2): ");
     scanf("%d", &num);
@@ -27,7 +41,6 @@ int main(void)
     //array must declare here
     int array[num];
     int flag[num];
-    int sum_array[num];
 
     for (int i = 0; i < num; i++)
         flag[i] = 0;
@@ -43,7 +56,8 @@ int main(void)
 
     printf("Enter random number: ");
     scanf("%d", &random);
-    int temp = factorial(num, random);
+    int temp = choose(num, random);
+    int sum_array[temp];
     
     /* for (int i = 0; i < temp; i++)
        sum_array[i] = 0; */

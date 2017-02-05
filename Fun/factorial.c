@@ -4,7 +4,8 @@
 
 int main(void)
 {
-    int input, result = 1, i;
+    int input, i;
+    long int result = 1;
 
     printf("Enter a integer: ");
     scanf("%d", &input);
@@ -14,7 +15,7 @@ int main(void)
         printf("%d * ", i);
         result *= i;
     }
-    printf("1 = %d\n", result);
+    printf("1 = %ld\n", result);
     
     return 0;
 }
