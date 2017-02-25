@@ -121,7 +121,7 @@ void update(void)
                       scanf("%d", &change);
                       inventory[i].on_hand += change;
                       break;
-            default:  printf("Invalid choice.\n"); 
+            default : printf("Invalid choice.\n"); 
                       return;      
         }
     } else
