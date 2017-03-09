@@ -1,0 +1,4 @@
+﻿  EX02_2.cpp
+c:\users\lenovo-pc\desktop\c\王镇宇_u201314969\ex02_2\ex02_2\ex02_2.cpp(15): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  EX02_2.vcxproj -> C:\Users\LENOVO-PC\Desktop\C\王镇宇_U201314969\EX02_2\Debug\EX02_2.exe
+  EX02_2.vcxproj -> C:\Users\LENOVO-PC\Desktop\C\王镇宇_U201314969\EX02_2\Debug\EX02_2.pdb (Partial PDB)

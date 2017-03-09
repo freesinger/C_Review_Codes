@@ -1,0 +1,5 @@
+﻿  EX02_4.cpp
+c:\users\lenovo-pc\desktop\c\王镇宇_u201314969\ex02_4\ex02_4\ex02_4.cpp(12): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\stdio.h(1269): note: 参见“scanf”的声明
+  EX02_4.vcxproj -> C:\Users\LENOVO-PC\Desktop\C\王镇宇_U201314969\EX02_4\Debug\EX02_4.exe
+  EX02_4.vcxproj -> C:\Users\LENOVO-PC\Desktop\C\王镇宇_U201314969\EX02_4\Debug\EX02_4.pdb (Partial PDB)
