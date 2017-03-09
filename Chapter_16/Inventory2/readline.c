@@ -4,7 +4,7 @@
 
 int readline(char str[], int n)
 {
-    int ch, i;
+    int ch, i = 0;
 
     while (isspace(ch = getchar()))
         ;
