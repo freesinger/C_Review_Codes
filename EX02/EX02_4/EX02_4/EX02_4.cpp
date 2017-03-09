@@ -1,12 +1,12 @@
-// EX02_4.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌÐòµÄÈë¿Úµã¡£
+// EX02_4.cpp : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨Ó¦ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµã¡£
 //
 
-#include "stdafx.h"
+#include "stdio.h"
 
 
 int main(void)
 {
-	char num1, num2, num3, num4;
+	/* char num1, num2, num3, num4;
 
 	printf("Enter two hex numbers: ");
 	scanf("%c%c %c%c", &num1, &num2, &num3, &num4);
@@ -14,19 +14,33 @@ int main(void)
 	printf("Linked number is: %c%c%c%c\n",
 			num3, num4, num1, num2);
 
-	return 0;
+	return 0; */
 
-	/*int hex[4], ch, i = 0;
+	int hex[4], ch, i = 0;
 	
 	printf("Enter two hex number: ");
-	while ((ch = getchar()) != ' ' && (ch = getchar()) != '\n')
+	ch = getchar();
+	/* while (ch != '\n') {
+		if (ch == ' ') {
+			ch = getchar();
+			continue;
+		}
 		hex[i++] = ch;
+		ch = getchar();
+	} */
+	
+	while (ch != '\n') {
+		if (ch != ' ') {
+			hex[i++] = ch;
+			ch = getchar();      //add continue here instead of else{}
+		} else 
+			ch = getchar();
+	}
 
 	printf("Linked number is: ");
 	for (i = 0; i < 4; i++)
 		putchar(hex[i]);
-	printf("h\n");
+	printf("H\n");
 
-	return 0; */
+	return 0;
 }
-
