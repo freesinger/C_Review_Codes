@@ -30,7 +30,7 @@ int main(void)
 	} */
 	
 	while (ch != '\n') {
-		if (ch != ' ') {
+		if (ch != ' ')
 			hex[i++] = ch;
 		 //add continue here instead of else{} 
 		ch = getchar();
