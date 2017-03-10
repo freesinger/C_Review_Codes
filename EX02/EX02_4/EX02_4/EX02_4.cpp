@@ -1,4 +1,4 @@
-// EX02_4.cpp : ��������̨Ӧ�ó��������ڵ㡣
+// EX02_4.cpp : 
 //
 
 #include "stdio.h"
@@ -32,9 +32,8 @@ int main(void)
 	while (ch != '\n') {
 		if (ch != ' ') {
 			hex[i++] = ch;
-			ch = getchar();      //add continue here instead of else{}
-		} else 
-			ch = getchar();
+		 //add continue here instead of else{} 
+		ch = getchar();
 	}
 
 	printf("Linked number is: ");
