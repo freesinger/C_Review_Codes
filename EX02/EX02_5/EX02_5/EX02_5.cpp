@@ -1,6 +1,3 @@
-// EX02_5.cpp : 定义控制台应用程序的入口点。
-//
-
 #include "stdafx.h"
 
 
@@ -14,5 +11,5 @@ int main(void)
 
 	printf("Value of c: %d\n", c);
 
-    return 0;
+    	return 0;
 }
