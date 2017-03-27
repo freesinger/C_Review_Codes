@@ -2,7 +2,7 @@
 //
 
 #include "stdio.h"
-
+#include <ctype.h>
 
 int main(void)
 {
@@ -21,7 +21,7 @@ int main(void)
 	printf("Enter two hex number: ");
 	ch = getchar();
 	/* while (ch != '\n') {
-		if (ch == ' ') {
+		if (isspace(ch)) {
 			ch = getchar();
 			continue;
 		}
@@ -30,7 +30,7 @@ int main(void)
 	} */
 	
 	while (ch != '\n') {
-		if (ch != ' ')
+		if (!isspace(ch))
 			hex[i++] = ch;
 		 //add continue here instead of else{} 
 		ch = getchar();
