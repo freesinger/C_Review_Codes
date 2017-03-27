@@ -13,9 +13,9 @@ int main(void)
     int array[m][n], res_array[res];
 
     for (int x = 0; x < m; x++) {
-        srand((unsigned)time(NULL));   // choose random number
+        srand((unsigned)time(NULL));   // initial rand()
         for (int y = 0; y < n; y++)
-            array[x][y] = rand() % res + 1;
+            array[x][y] = rand() % res + 1; // choose random number
     }
     
     printf("Orignal matrix: \n");
