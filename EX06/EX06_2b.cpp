@@ -12,17 +12,17 @@ int main(void)
     scanf("%d", &input);
     *(p + MAX_LEN) = input;
 
-    for (int i = 0; i < MAX_LEN; i++) {
-        if (*(p + i) > *(p + MAX_LEN)) {
-            temp = *(p + i);
-            *(p + i) = *(p + MAX_LEN);
-            *(p + MAX_LEN) = temp;
+    for (p = array; p < array + MAX_LEN; p++) {
+        if (*p > *(array + MAX_LEN)) {
+            temp = *p;
+            *p = *(array + MAX_LEN);
+            *(array + MAX_LEN) = temp;
         }
     }
 
     printf("Array now is: ");
-    for (int i = 0; i < MAX_LEN + 1; i++)
-        printf("%d ", *(p + i));
+    for (p = array; p < array + MAX_LEN; p++)
+        printf("%d ", *p);
 
     printf("\n");
 
