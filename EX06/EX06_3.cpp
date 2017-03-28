@@ -45,7 +45,8 @@ void pointer_comp(int i, int j, int k)
     printf("Pointer sorted result: ");
 
     int array[3], temp;
-    int *x = array;
+   
+   /* int *x = array;
     x[0] = i, x[1] = j, x[2] = k;
 
     for (int a = 0; a < 3; a++) {
@@ -55,11 +56,27 @@ void pointer_comp(int i, int j, int k)
                 *(x + b) = *(x + a);
                 *(x + a) = temp;
             }
+    } 
+    
+    for (x = array; x < array + 3; x++)
+        printf("%d ", *x);   
+
+    */ 
+    int *x, *y;
+    array[0] = i, array[1] = j; array[2] = k;
+
+    for (x = array; x < x + 3; x++) {
+        for (y = array + 1; y < y + 3; y++)
+            if (*x > *y) {
+                temp = *x;
+                *x = *y;
+                *y = temp;
+            }
     }
 
-    for (int a = 0; a < 3; a++)
-        printf("%d ", *(x + a));
-    printf("\n");
+    for (x = array; x < array + 3; x++)
+        printf("%d ", *x); 
+    printf("\n"); 
 }
 
 int main(void)
