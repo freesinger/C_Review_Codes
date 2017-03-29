@@ -1,10 +1,14 @@
+// ConsoleApplication3.cpp : 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
 #include <stdio.h>
 
-#define N 4
+#define N 2
 
 int main(void)
 {
-	int matrix[N][N], matrix2[N][N], max = 0;
+	int matrix[N][N], matrix2[N][N], *x, *y, max = 0;
 	int row, clo, pos_x, pos_y;
 
 	printf("Enter %d * %d matrix: ", N, N);
@@ -15,8 +19,12 @@ int main(void)
 
 	// convert matrix
 	for (row = 0; row < N; row++)
-		for (clo = 0; clo < N; clo++)
-			matrix2[clo][row] = matrix[row][clo];
+		for (clo = 0; clo < N; clo++) {
+			*x = matrix[row][clo];
+			*y = matrix2[clo][row];
+			*y = *x;
+		}
+			//matrix2[clo][row] = matrix[row][clo];
 
 	// find MAX number
 	for (row = 0; row < N; row++)
@@ -27,12 +35,11 @@ int main(void)
 				pos_y = clo;
 			}
 		}
-
+	
 	// print the converted matrix
-	printf("Converted matrix: \n");
 	for (row = 0; row < N; row++) {
 		for (clo = 0; clo < N; clo++)
-			printf("%3d ", matrix2[row][clo]);
+			printf("%2d ", matrix2[row][clo]);
 		printf("\n");
 	}
 
@@ -41,16 +48,3 @@ int main(void)
 
 	return 0;
 }
-
-///mark:
-// convert matrix
-/* for (row = 0; row < N; row++)
-for (clo = 0; clo < N; clo++) {
-*x = matrix[row][clo];
-*y = matrix[clo][row];
-if (row != clo) {
-temp = x;
-x = y;
-y = temp;
-}
-} */
