@@ -3,17 +3,18 @@
 
 int main(void)
 {
-    char *str_a = "http://www.github.com", *str_b;
-    int len = strlen(str_a), start, j = 0;
+    char *str_a = "http://www.github.com";
+    int len = strlen(str_a), start;
+    char string[len];
+    char *str_b = string;
 
+    printf("Orignal string: %s\n", str_a);
     printf("Enter a number(< %d): ", len);
     scanf("%d", &start);
 
-    for (int i = start; i < len; i++)
-        *(str_b + j++) = *(str_a + i);
+    strcpy(str_b, &str_a[start]);
 
-    for (int j = 0; j < len - start; j++)
-        putchar(*(str_b));
+    printf("New string is: %s\n", str_b);
 
     return 0;
 }
