@@ -12,7 +12,7 @@ int main(void)
 	while ((ch = getchar()) != '\n')
         if (i < len)
             string[i++] = ch;
-    string[i] = '\0';
+	string[i] = '\0';
 	
 	/* printf("%s\n", string); */        // PASS:printf("%s\n", str);
 	/* str = string; */					 
