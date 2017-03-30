@@ -5,17 +5,17 @@ int main(void)
 {
 	int res[100] = { 0 }, j = 0, acc = 0; 
 	char string[100], *str = string;
-	int ch, len;
+	int ch, i = 0, len = strlen(string);
 	
 	printf("Enter the string: ");
  
 	while ((ch = getchar()) != '\n')
-		*(str++) = ch;
-	*str = '\0';
+        if (i < len)
+            string[i++] = ch;
+    string[i] = '\0';
 	
-	/* printf("%s\n", string); */    // ERROR:printf("%s\n", str);
-	str = string;					 // POINTER must be pointed again here
-	len = strlen(string);
+	/* printf("%s\n", string); */        // PASS:printf("%s\n", str);
+	/* str = string; */					 
 	/* printf("%d\n", len); */
 
 	for (int i = 0; i < len; i++) {
