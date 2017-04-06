@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include <stdio.h>
 
 float area_tri(float length, float height)
