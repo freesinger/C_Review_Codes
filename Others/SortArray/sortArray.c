@@ -29,15 +29,13 @@ int main(void)
     char *temp, spec[N + 1];
     /* spec = malloc((N + 1) * sizeof(char)); */
 
-    for (int i = 0; i < N; i++) {
-        for (int j = i + 1; j < N; j++) {
+    for (int i = 0; i < N; i++)
+        for (int j = i + 1; j < N; j++)
             if (strlen(str[i]) > strlen(str[j])) {
                 temp = str[i];
                 str[i] = str[j];
                 str[j] = temp;
             }
-        }
-    }
 
     printf("Sorted array: ");
     for (int i = 0; i < N; i++)
